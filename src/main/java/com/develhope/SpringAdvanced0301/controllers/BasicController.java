@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class BasicController {
 
-    @Value("${myCustomVarTree.firstInt}")
+    @Value("${firstInt}")
     String firstInt;
 
-    @Value("${myCustomVarTree.secondInt}")
+    @Value("${secondInt}")
     String secondInt;
 
     Integer firstIntConv;

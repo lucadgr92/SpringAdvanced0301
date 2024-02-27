@@ -1,10 +1,12 @@
 <configuration>
 
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <withJansi>true</withJansi>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-        </encoder>
+    <appender name="Console"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %black(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1}): %msg%n%throwable
+            </Pattern>
+        </layout>
     </appender>
 
     <property name="LOG_DIR" value="myCustomLogs" /> <!-- Replace the LOG_FILE property with LOG_DIR -->
@@ -25,9 +27,12 @@
     </appender>
 
     <root level="INFO">
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="Console" />
+        <appender-ref ref="FILE" />
     </root>
 
-    <logger name="com.example.services" level="DEBUG"/> <!-- Set service level to DEBUG -->
-
+    <logger name="com.develhope.SpringAdvanced0301" level="trace" additivity="false">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="Console" />
+    </logger>
 </configuration>

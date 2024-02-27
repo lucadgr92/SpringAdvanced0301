@@ -15,12 +15,12 @@ public class BasicService {
 
     public double additionService(int firstInt, int secondInt) {
         try {
-            log.info("Starting calculation.");
-            log.info("First argument {}",firstInt);
-            log.info("Second argument {}",secondInt);
+            log.warn("Starting calculation.");
+            log.warn("First argument {}",firstInt);
+            log.warn("Second argument {}",secondInt);
             return Math.pow(firstInt, secondInt);
         } finally {
-            log.info("Calculation completed.");
+            log.warn("Calculation completed.");
         }
 
     }

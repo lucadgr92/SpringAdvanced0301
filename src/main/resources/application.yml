@@ -1,6 +1,0 @@
-myCustomVarTree:
-  firstInt: 2
-  secondInt: 8
-server:
-  port: 4500
-
